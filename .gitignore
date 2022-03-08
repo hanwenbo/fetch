@@ -1,0 +1,9 @@
+# ide
+/.idea/
+/.DS_Store
+/.svn/
+
+vendor/
+.env
+.idea/*
+composer.lock

@@ -1,0 +1,35 @@
+{
+  "name": "hanwenbo/fetch",
+  "description": "FaShop EasySwoole HttpClient",
+  "type": "library",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "韩文博",
+      "email": "9476400@qq.com"
+    }
+  ],
+  "keywords": [
+    "easyswoole",
+    "swoole",
+    "php",
+    "fashop",
+    "http",
+    "curl",
+    "guzzle"
+
+  ],
+  "require": {
+    "php": ">=7.4",
+    "easyswoole/http-client": "^1.5"
+  },
+  "require-dev": {
+    "ext-json": "*",
+    "easyswoole/swoole-ide-helper": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "hanwenbo\\fetch\\": "src/"
+    }
+  }
+}
