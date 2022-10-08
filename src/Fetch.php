@@ -1,5 +1,7 @@
 <?php
+
 namespace hanwenbo\fetch;
+
 use EasySwoole\HttpClient\Bean\Response;
 
 /**
@@ -15,6 +17,18 @@ use EasySwoole\HttpClient\Bean\Response;
  */
 class Fetch
 {
+	protected $client;
+
+	public function __construct()
+	{
+		$this->client = new \EasySwoole\HttpClient\HttpClient();
+	}
+
+	public function getClient() : \EasySwoole\HttpClient\HttpClient
+	{
+		return $this->client;
+	}
+
 	/**
 	 * @param string $method
 	 * @param string $url
@@ -23,8 +37,8 @@ class Fetch
 	 */
 	public function request( string $method, string $url, array $params = null ) : Response
 	{
-		$client = new \EasySwoole\HttpClient\HttpClient( $url );
-
+		$client = $this->client;
+		$client->setUrl( $url );
 		if( isset( $params['header'] ) && !empty( $params['header'] ) && is_array( $params['header'] ) ){
 			$client->setHeaders( $params['header'], true, false );
 		}
@@ -70,4 +84,5 @@ class Fetch
 
 		return $response;
 	}
+
 }

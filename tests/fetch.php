@@ -11,5 +11,8 @@ go( function(){
 			'adada' => 121212,
 		],
 	] );
-	var_dump( $res );
+
+//	var_dump( $res );
+	$originClient = $client->getClient();
+	var_dump($originClient);
 } );
